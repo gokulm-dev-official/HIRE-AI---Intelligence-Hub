@@ -1,0 +1,7 @@
+Gokul M
+Email: gokul@example.com
+Phone: 1234567890
+Location: Chennai, India
+Experience: 3 years as a Full Stack Developer at Tech Corp.
+Skills: React, Node.js, Python.
+Education: B.E in Computer Science.

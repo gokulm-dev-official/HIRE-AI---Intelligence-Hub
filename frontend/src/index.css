@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a1a1a;
+  /* Pure black for Apple/Google feel */
+  --color-accent: #3b82f6;
+  /* Tech blue */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-bg-light: #ffffff;
+  --color-bg-soft: #f9fafb;
+  --color-border-subtle: #e5e7eb;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-soft text-slate-900 font-sans antialiased font-medium;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black tracking-tighter;
+  }
+}
+
+@layer components {
+
+  /* Google/Apple Minimalist Cards */
+  .apple-card {
+    @apply bg-white border border-border-subtle rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .apple-card-glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl p-6;
+  }
+
+  /* Smooth Inputs */
+  .google-input {
+    @apply w-full bg-slate-50 border border-slate-200 rounded-2xl py-3 px-5 text-slate-900 focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/5 outline-none transition-all duration-200;
+  }
+
+  /* Premium Buttons */
+  .btn-apple-primary {
+    @apply bg-black text-white px-6 py-3 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-95 transition-all duration-200 shadow-lg shadow-black/10;
+  }
+
+  .btn-apple-secondary {
+    @apply bg-white text-black border border-slate-200 px-6 py-3 rounded-2xl font-black flex items-center justify-center gap-2 hover:bg-slate-50 active:scale-95 transition-all duration-200;
+  }
+
+  /* Sidebar styling */
+  .sidebar-light {
+    @apply bg-white/80 backdrop-blur-xl border-r border-slate-100 shadow-sm;
+  }
+
+  /* Smooth Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+/* Scrollbar Cleanliness */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
