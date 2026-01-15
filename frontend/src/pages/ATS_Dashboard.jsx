@@ -144,7 +144,7 @@ const ATS_Dashboard = () => {
                 </div>
 
                 {/* Audit Chart - Minimalist Recharts */}
-                <div className="apple-card flex flex-col h-[500px]">
+                <div className="apple-card flex flex-col min-h-[500px]">
                     <h3 className="text-xl font-black text-slate-900 tracking-tight mb-10">Bias Analysis (AI)</h3>
                     <div className="flex-1 w-full relative min-h-[300px]">
                         {mounted && (

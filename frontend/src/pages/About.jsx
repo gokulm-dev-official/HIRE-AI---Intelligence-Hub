@@ -50,7 +50,7 @@ const About = () => {
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Lead Architect</span>
                 </div>
 
-                <h1 className="text-7xl font-black text-slate-900 tracking-tighter mb-4 uppercase">
+                <h1 className="text-4xl md:text-7xl font-black text-slate-900 tracking-tighter mb-4 uppercase">
                     {config.name}
                 </h1>
                 <p className="text-2xl font-bold text-slate-400 mb-8 tracking-tight">

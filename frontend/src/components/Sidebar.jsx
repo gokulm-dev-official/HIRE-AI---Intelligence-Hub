@@ -12,7 +12,6 @@ const Sidebar = ({ isOpen, onClose }) => {
         { name: 'Bulk Ingestion', icon: Sparkles, path: '/bulk' },
         { name: 'ATS Check', icon: Target, path: '/ats-check' },
         { name: 'Semantic Match', icon: Briefcase, path: '/jobs' },
-        { name: 'Pipeline', icon: CheckCircle, path: '/applications' },
         { name: 'About System', icon: User, path: '/about' },
     ];
 

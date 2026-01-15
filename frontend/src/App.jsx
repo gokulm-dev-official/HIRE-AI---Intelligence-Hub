@@ -26,7 +26,6 @@ function App() {
             <Route path="/bulk" element={<BulkUpload />} />
             <Route path="/upload" element={<div className="pt-10"><ResumeUpload onUploadSuccess={(data) => console.log(data)} /></div>} />
             <Route path="/jobs" element={<Job_Recommendation />} />
-            <Route path="/applications" element={<Applications />} />
             <Route path="/ats-check" element={<ATS_Check />} />
             <Route path="/insights" element={<ATS_Check />} />
             <Route path="/about" element={<About />} />
