@@ -55,7 +55,7 @@ const ATS_Dashboard = () => {
             </div>
 
             {/* Stats Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {stats.map((stat, idx) => (
                     <motion.div
                         key={idx}
@@ -71,7 +71,7 @@ const ATS_Dashboard = () => {
                             <ArrowUpRight className="text-slate-200" size={20} />
                         </div>
                         <h4 className="text-slate-400 text-[13px] font-black uppercase tracking-[0.1em]">{stat.label}</h4>
-                        <p className="text-4xl font-black text-slate-900 mt-2 tracking-tighter">{stat.value}</p>
+                        <p className="text-3xl md:text-4xl font-black text-slate-900 mt-2 tracking-tighter">{stat.value}</p>
                         <p className="text-[11px] font-bold text-slate-400 mt-3">{stat.change}</p>
                     </motion.div>
                 ))}
@@ -80,15 +80,15 @@ const ATS_Dashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 {/* Candidates Table - Ultra Clean */}
                 <div className="lg:col-span-2 apple-card-glass shadow-sm !p-0 overflow-hidden">
-                    <div className="p-8 border-b border-slate-50 flex justify-between items-center bg-white/50 backdrop-blur-md sticky top-0 z-10">
+                    <div className="p-6 md:p-8 border-b border-slate-50 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white/50 backdrop-blur-md sticky top-0 z-10">
                         <h3 className="text-xl font-black text-slate-900 tracking-tight">Recent Ingestions</h3>
-                        <div className="flex gap-2">
-                            <button className="px-5 py-2 text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition-all">Export</button>
-                            <button className="px-5 py-2 text-xs font-black uppercase tracking-widest bg-black text-white rounded-xl">View Grid</button>
+                        <div className="flex gap-2 w-full md:w-auto">
+                            <button className="flex-1 md:flex-none px-5 py-2 text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition-all">Export</button>
+                            <button className="flex-1 md:flex-none px-5 py-2 text-xs font-black uppercase tracking-widest bg-black text-white rounded-xl">View Grid</button>
                         </div>
                     </div>
                     <div className="overflow-x-auto">
-                        <table className="w-full text-left text-[14px]">
+                        <table className="w-full text-left text-[14px] min-w-[800px]">
                             <thead className="bg-slate-50/50 text-slate-400">
                                 <tr>
                                     <th className="px-8 py-5 font-black uppercase tracking-widest text-[10px]">Candidate Profile</th>
@@ -146,7 +146,7 @@ const ATS_Dashboard = () => {
                 {/* Audit Chart - Minimalist Recharts */}
                 <div className="apple-card flex flex-col h-[500px]">
                     <h3 className="text-xl font-black text-slate-900 tracking-tight mb-10">Bias Analysis (AI)</h3>
-                    <div className="flex-1 w-full relative">
+                    <div className="flex-1 w-full relative min-h-[300px]">
                         {mounted && (
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart data={biasData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>

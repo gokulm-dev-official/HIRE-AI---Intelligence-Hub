@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, FileText, Briefcase, Search, CheckCircle, Settings, HelpCircle, BarChart2, MessageSquare, Sparkles, Target, User } from 'lucide-react';
+import { LayoutDashboard, FileText, Briefcase, Search, CheckCircle, Settings, HelpCircle, BarChart2, MessageSquare, Sparkles, Target, User, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
     const navItems = [
         { name: 'Insights', icon: LayoutDashboard, path: '/' },
@@ -17,7 +17,15 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className="fixed left-0 top-0 h-screen w-72 bg-white border-r border-slate-100 z-50 flex flex-col p-10 px-8 transition-all duration-300">
+        <aside className={`fixed left-0 top-0 h-screen w-72 bg-white border-r border-slate-100 z-50 flex flex-col p-10 px-8 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+            {/* Mobile Close Button */}
+            <button
+                onClick={onClose}
+                className="absolute top-6 right-6 p-2 bg-slate-50 text-slate-400 rounded-full md:hidden hover:text-red-500"
+            >
+                <X size={20} />
+            </button>
+
             {/* Logo - Minimalist Apple Style */}
             <div
                 className="flex items-center gap-4 mb-12 cursor-pointer group px-2"
@@ -35,12 +43,13 @@ const Sidebar = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 space-y-1">
+            <nav className="flex-1 space-y-1 overflow-y-auto no-scrollbar">
                 <div className="text-[10px] uppercase font-black tracking-widest text-slate-300 mb-6 ml-4">Workspace</div>
                 {navItems.map((item) => (
                     <NavLink
                         key={item.path}
                         to={item.path}
+                        onClick={() => window.innerWidth < 768 && onClose && onClose()}
                         className={({ isActive }) =>
                             `flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-300 group ${isActive
                                 ? 'bg-slate-50 text-slate-900 shadow-sm border border-slate-100'

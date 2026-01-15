@@ -1,7 +1,19 @@
 import axios from 'axios';
 
+const getBaseUrl = () => {
+    let url = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1';
+    // Fix common deployment issue where users only provide the domain
+    if (!url.endsWith('/api/v1')) {
+        // If it ends with slash, remove it first
+        if (url.endsWith('/')) url = url.slice(0, -1);
+        // Append correct suffix
+        url += '/api/v1';
+    }
+    return url;
+};
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1',
+    baseURL: getBaseUrl(),
 });
 
 // Since auth is bypassed on backend, we can remove interceptors or keep them minimal

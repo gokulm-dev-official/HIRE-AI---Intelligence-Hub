@@ -152,7 +152,7 @@ const ResumeUpload = ({ onUploadSuccess }) => {
                 </button>
             </div>
 
-            <div className="mt-16 grid grid-cols-3 gap-8">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                     { title: "Semantic Parsing", desc: "LLM-driven field extraction for zero-loss data recovery." },
                     { title: "Vector Indexing", desc: "Generating high-dimensional embeddings for semantic RAG search." },
